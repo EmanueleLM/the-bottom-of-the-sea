@@ -25,7 +25,7 @@ import numpy as np
 # returns:
 #   the new population, whose size should be 2^(2n)
 #   a random element of population, picked up with probability 2**(-rank) where rank is the position of the element wrt the fitness in the popoulation (rank goes from 1 to len(population))
-def overgrownRankSelection(population):
+def overgrown_rank_selection(population):
     new_population = list();
     for n in range(len(population)):
         for i in range(2**n):
@@ -35,4 +35,4 @@ def overgrownRankSelection(population):
 """ Test Part """
 population_size = 10;
 population = list([[i, -.1*i] for i in range(population_size)]); # create a population by descending fitness (-.1*i)
-new_pop, picked_el = overgrownRankSelection(population);
+new_pop, picked_el = overgrown_rank_selection(population);
